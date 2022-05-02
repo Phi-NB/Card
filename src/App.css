@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
+.app {
+  width: 1200px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.header__logo {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ant-card {
+  margin: 20px 10px !important;
+  height: 300px;
+}
+
+.ant-card-body {
+  padding: 0 !important;
+}
+
+.ant-card-cover {
+  height: 60% !important;
+}
+
+.ant-card-cover img {
+  height: 100%;
+  width: 100%;
+}
+
+.card__content {
+  margin: 20px 10px;
+}
+
+.card__content p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #000;
+  font-weight: bold;
+}
+
+.card__content__group-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px
+}
+
+.ant-card-hoverable {
+  cursor: auto !important;
 }
