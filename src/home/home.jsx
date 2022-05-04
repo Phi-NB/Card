@@ -3,6 +3,8 @@ import { getData } from "../service/product.js";
 import { getDataProduct, addCardProduct } from "../redux/_product";
 import Cards from "../component/card.jsx";
 import { useDispatch, useSelector } from "react-redux";
+import { Pagination  } from 'antd'
+import Loading from "../component/loading.jsx";
 
 function Home() {
   const dispatch = useDispatch();
@@ -16,15 +18,16 @@ function Home() {
     };
     getDataProducts();
   }, [dispatch]);
-
   const getIdProduct = (id) => {
     const result = dataProduct.filter((product) => {
       return id === product.id;
     });
-    for (let i = 0; i < result.length; i++) {
-      dispatch(addCardProduct(result[i]));
-    }
+    dispatch(addCardProduct({ item: result[0], quanlity: 2 }));
   };
+
+  if(dataProduct.length === 0) {
+    return <Loading/>
+  }
 
   return (
     <div className="app">
@@ -39,6 +42,7 @@ function Home() {
           );
         })}
       </div>
+      <Pagination defaultCurrent={1} total={20} />
     </div>
   );
 }

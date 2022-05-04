@@ -13,6 +13,8 @@ function Home() {
     dispatch(deleteCardProduct(index));
   }
 
+  console.log(dataProduct);
+
   return (
     <div className="app">
       <Divider orientation="left">Product</Divider>
@@ -23,9 +25,10 @@ function Home() {
         renderItem={(item, index) => (
           <List.Item>
             <List.Item.Meta
-              avatar={<Avatar src={item.image} />}
-              title={<Link to="">{item.title}</Link>}
-              description={item.price + '$'}
+              avatar={<Avatar src={item.product.image} />}
+              title={<Link to="">{item.product.title}</Link>}
+              description={item.product.price + '$'}
+              descriptions={item.quanlity}
             />
             <div style={{cursor: 'pointer'}} onClick={() => deleteItem(index)}>
               <CloseOutlined/>

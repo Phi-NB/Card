@@ -13,7 +13,7 @@ function Header() {
       </Link>
       <Link to="/cardProduct">
         <ShoppingCartOutlined style={{ fontSize: "26px", cursor: "pointer"}} />
-        <span>{listProduct.length}</span>
+        {!listProduct.length ? <span></span> : <span>{listProduct.length}</span>}
       </Link>
     </div>
   );
