@@ -22,7 +22,7 @@ function Home() {
     const result = dataProduct.filter((product) => {
       return id === product.id;
     });
-    dispatch(addCardProduct({ item: result[0], quanlity: 2 }));
+    dispatch(addCardProduct({ item: result[0], quanlity: 1 }));
   };
 
   if(dataProduct.length === 0) {
